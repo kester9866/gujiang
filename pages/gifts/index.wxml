@@ -1,0 +1,57 @@
+<!-- 返回按钮单独放在容器外部 -->
+<view class="back-view-button" bindtap="goBackHome">← 返回首页</view>
+<view class="header">伴手礼</view>
+  <!-- 顶部搜索栏 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="请输入搜索内容..." bindinput="onSearchInput" />
+    <button class="search-button" bindtap="onSearch">搜索</button>
+  </view>
+
+  <!-- 筛选栏 -->
+  <view class="filter-bar">
+    <view class="filter-item" bindtap="onSortByPrice">
+      <text>价格排序</text>
+    </view>
+    <view class="filter-item" bindtap="onSortBySales">
+      <text>人气排序</text>
+    </view>
+  </view>
+   <!-- 多选框-->
+   <view class="checkbox-group">
+    <checkbox-group bindchange="onCategoryChange">
+      <label class="checkbox-item">
+        <checkbox value="deco" /> 摆件
+      </label>
+      <label class="checkbox-item">
+        <checkbox value="food" /> 食物
+      </label>
+      <label class="checkbox-item">
+        <checkbox value="diy" /> 手工
+      </label>
+    </checkbox-group>
+  </view>
+<!-- 商品区域 -->
+<view class="shop-container">
+  <view class="product-card" wx:for="{{products}}" wx:key="id">
+    <image class="product-img" src="{{item.image}}" mode="aspectFill"></image>
+    <view class="product-info">
+      <text class="product-title">{{item.name}}</text>
+      <text class="product-price">¥{{item.price}}</text>
+    </view>
+  </view>
+</view>
+<!-- tabbar.wxml -->
+<view class="tabbar">
+  <view class="tab-item" bindtap="goToGoods">
+    <image src="/assets/icon-goods.png" class="tab-icon"></image>
+    <text class="tab-text">商品</text>
+  </view>
+  <view class="tab-item" bindtap="goToCart">
+    <image src="/assets/icon-cart.png" class="tab-icon"></image>
+    <text class="tab-text">购物车</text>
+  </view>
+  <view class="tab-item" bindtap="goToOrder">
+    <image src="/assets/icon-order.png" class="tab-icon"></image>
+    <text class="tab-text">订单</text>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="card">
+  <view class="user-info">
+    <image class="avatar" src="1.jpg"></image>
+    <text>Lyney</text>
+  </view>
+
+  <!-- 活动标题 -->
+  <view class="title">{{activity.title}}</view>
+
+  <!-- 活动地点 -->
+  <view class="location">{{activity.location}}</view>
+
+  <!-- 活动标签 -->
+  <view class="tags">
+    <block wx:for="{{activity.tags}}" wx:key="index">
+      <view class="tag-item">{{item}}</view>
+    </block>
+  </view>
+
+  <!-- 活动描述 -->
+  <view class="content">{{activity.description}}</view>
+
+  <!-- 已报名人数 -->
+  <view class="participants">
+    <text>已报名人数：{{activity.participants}}</text>
+  </view>
+
+  <!-- 报名按钮 -->
+  <button bindtap="handleJoin">{{activity.hasJoined ? '已报名' : '报名'}}</button>
+</view>
