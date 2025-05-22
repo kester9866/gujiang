@@ -1,29 +1,46 @@
 <view class="container">
   <view class="background-wrapper">
-  <image class="background-image" src="/image/10.jpg" mode="aspectFill"></image>
-  <view class="header">古 将 优 选</view>
- 
-  <view class="grid">
-    <view class="card" bindtap="goToGoods">
-    <text class="icon">🛍️</text><text>特产商城</text>
-  </view>
-    <navigator url="/pages/homestay/index" class="card"><text class="icon">🏡</text><text>民宿预订</text></navigator>
-    <navigator url="/pages/events/index" class="card" ><text class="icon">🎉</text><text>活动预约</text></navigator>
-    <navigator url="/pages/gifts/index" class="card"><text class="icon">🎁</text><text>伴手礼定制</text></navigator>
-    <navigator url="/pages/scene/index" class="card"><text class="icon">🌄</text><text>景点导览</text></navigator>
-  </view>
+    <image class="background-image" src="/image/10.jpg" mode="aspectFill" />
 
-  <view class="section">
-    <view class="section-title">推荐路线</view>
-    <view class="list">
-      <text>• 亲子趣味——豆宝互动、农耕体验</text>
-      <text>• 非遗文化——豆腐工坊、豆子文创</text>
-      <text>• 生态徒步——山泉步道(打卡赢积分)</text>
+    <view class="header">古 将 优 选</view>
+
+    <view class="grid">
+      <view class="card" bindtap="goToGoods">
+        <text class="icon">🛍️</text><text>特产商城</text>
+      </view>
+      <navigator url="/pages/events/index" class="card">
+        <text class="icon">🎉</text><text>活动预约</text>
+      </navigator>
+      <navigator url="/pages/homestay/index" class="card">
+        <text class="icon">🏡</text><text>民宿预订</text>
+      </navigator>
+      <navigator url="/pages/gifts/index" class="card">
+        <text class="icon">🎁</text><text>伴手礼定制</text>
+      </navigator>
+      <navigator url="/pages/scene/index" class="card">
+        <text class="icon">🌄</text><text>景点导览</text>
+      </navigator>
+      <navigator url="/pages/guide/index" class="card">
+        <text class="icon">👤</text><text>个人中心</text>
+      </navigator>
     </view>
-  </view>
 
-  <view class="footer">© 2025 古将优选 - 豆韵匠心・山水豆旅</view>
-  <!-- AI导游豆宝浮窗 -->
-  <image class="floating-bobao" src="/image/2.png" bindtap="dou" />
-</view>
+    <view class="section">
+      <view class="section-title">推荐路线</view>
+      <view class="list">
+        <text>• 亲子趣味——豆宝互动、农耕体验</text>
+        <text>• 非遗文化——豆腐工坊、豆子文创</text>
+        <text>• 生态徒步——山泉步道(打卡赢积分)</text>
+      </view>
+    </view>
+
+    <view class="footer">© 2025 古将优选 - 豆韵匠心・山水豆旅</view>
+
+    <!-- ✅ 可拖拽豆宝 -->
+    <movable-area class="doubao-area">
+      <movable-view class="doubao-box" direction="all" x="300" y="500" out-of-bounds="true" damping="30" friction="2" bindtap="dou">
+        <image src="/image/2.png" class="doubao-img" />
+      </movable-view>
+    </movable-area>
+  </view>
 </view>
