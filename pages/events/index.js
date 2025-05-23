@@ -1,69 +1,53 @@
 Page({
-  data: {
-    activity: {
-      title: "古法豆腐制作体验", // 活动标题
-      location: "古豆文化村", // 活动地点
-      tags: ["亲子", "豆腐制作", "古法体验"], // 标签列表
-      description: "体验传统手工豆腐制作的过程，带您了解古老的豆腐文化。", // 活动描述
-      hasJoined: false // 是否已报名
+    data: {
+        activities: [
+            {
+              _id: '1',
+              title: "古法豆腐制作体验",
+              location: "古豆文化村",
+              tags: ["亲子", "豆腐制作", "古法体验"],
+              description: "体验传统手工豆腐制作的过程，带您了解古老的豆腐文化。",
+              colorClass: "card-green",
+              hasJoined: false
+            },
+            {
+              _id: '2',
+              title: "手工扎染工作坊",
+              location: "民艺馆·二楼",
+              tags: ["非遗", "DIY", "艺术"],
+              description: "学习中国传统扎染工艺，亲手制作一条独一无二的手工围巾。",
+              colorClass: "card-blue",
+              hasJoined: false
+            },
+            {
+              _id: '3',
+              title: "古村落定向越野赛",
+              location: "豆子文旅起点站",
+              tags: ["运动", "户外", "团队"],
+              description: "探索古村落的每一个角落，团队协作完成任务，赢取小礼品。",
+              colorClass: "card-yellow",
+              hasJoined: false
+            },
+            {
+              _id: '4',
+              title: "豆文化亲子讲座",
+              location: "游客中心·演讲厅",
+              tags: ["亲子", "文化", "讲座"],
+              description: "通过趣味互动课程，激发孩子对传统豆制文化的兴趣。",
+              colorClass: "card-purple",
+              hasJoined: false
+            },
+            {
+              _id: '5',
+              title: "乡村音乐篝火夜",
+              location: "豆田营地",
+              tags: ["音乐", "篝火", "夜晚"],
+              description: "星空下的民谣，围着篝火唱歌跳舞，尽享惬意田园之夜。",
+              colorClass: "card-orange",
+              hasJoined: false
+            }
+          ]
+          
     }
-  },
-
-  onLoad(options) {
-    const db = wx.cloud.database();
-    const postId = options.id;
-
-    let openid = wx.getStorageSync('openid');
-    if (!openid) {
-      wx.cloud.callFunction({
-        name: 'login',
-        success: res => {
-          openid = res.result.openid;
-          wx.setStorageSync('openid', openid);
-          this.fetchPost(postId, openid);
-        }
-      });
-    } else {
-      this.fetchPost(postId, openid);
-    }
-  },
-
-  fetchPost(postId, openid) {
-    const db = wx.cloud.database();
-    db.collection('activities').doc(postId).get({
-      success: (res) => {
-        this.setData({
-          activity: res.data,
-          hasJoined: res.data.joinedBy?.includes(openid) || false
-        });
-      }
-    });
-  },
-
-  handleJoin() {
-    if (this.data.activity.hasJoined) {
-      wx.showToast({ title: '您已报名', icon: 'none' });
-      return;
-    }
-
-    const db = wx.cloud.database();
-    const _ = db.command;
-    const postId = this.data.activity._id;
-    const openid = wx.getStorageSync('openid');
-
-    db.collection('activities').doc(postId).update({
-      data: {
-        participants: _.inc(1),
-        joinedBy: _.push(openid),
-        updatedAt: db.serverDate()
-      },
-      success: () => {
-        wx.showToast({ title: '报名成功', icon: 'success' });
-        this.setData({
-          'activity.participants': this.data.activity.participants + 1,
-          'activity.hasJoined': true
-        });
-      }
-    });
-  }
-});
+  });
+  

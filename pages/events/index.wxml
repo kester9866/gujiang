@@ -1,25 +1,16 @@
 <view class="theme">活动预约</view>
-<view class="card">
-  
-
-  <!-- 活动标题 -->
-  <view class="title">{{activity.title}}</view>
-
-  <!-- 活动地点 -->
-  <view class="location">{{activity.location}}</view>
-
-  <!-- 活动标签 -->
-  <view class="tags">
-    <block wx:for="{{activity.tags}}" wx:key="index">
-      <view class="tag-item">{{item}}</view>
-    </block>
+<block wx:for="{{activities}}" wx:key="_id">
+  <view class="card {{item.colorClass}}">
+    <view class="title">{{item.title}}</view>
+    <view class="location">{{item.location}}</view>
+    <view class="tags">
+      <block wx:for="{{item.tags}}" wx:key="index">
+        <view class="tag-item">{{item}}</view>
+      </block>
+    </view>
+    <view class="content">{{item.description}}</view>
+    <button bindtap="handleJoin" data-id="{{item._id}}">
+      {{item.hasJoined ? '已报名' : '报名'}}
+    </button>
   </view>
-
-  <!-- 活动描述 -->
-  <view class="content">{{activity.description}}</view>
-
-
-
-  <!-- 报名按钮 -->
-  <button bindtap="handleJoin">{{activity.hasJoined ? '已报名' : '报名'}}</button>
-</view>
+</block>
