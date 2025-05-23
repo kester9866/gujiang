@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="header">选择您的行程</view>
+  
+  <view class="itinerary-list">
+    <view class="itinerary-item" bindtap="selectItinerary" data-type="family">
+      <text>👨‍👩‍👧‍👦 亲子趣味路线</text>
+      <text class="description">豆宝互动、农耕体验</text>
+    </view>
+    
+    <view class="itinerary-item" bindtap="selectItinerary" data-type="culture">
+      <text>🎨 非遗文化路线</text>
+      <text class="description">豆腐工坊、豆子文创</text>
+    </view>
+    
+    <view class="itinerary-item" bindtap="selectItinerary" data-type="hiking">
+      <text>🥾 生态徒步路线</text>
+      <text class="description">山泉步道(打卡赢积分)</text>
+    </view>
+  </view>
+  
+  <button class="back-button" bindtap="navigateBack">返回地图</button>
+</view>

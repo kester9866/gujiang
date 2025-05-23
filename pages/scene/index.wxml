@@ -1,19 +1,21 @@
 <view class="container">
-  <!-- 地图组件，设置为全屏显示 -->
+  <!-- 地图组件 -->
   <map
+    id="sceneMap"
     longitude="{{longitude}}"
     latitude="{{latitude}}"
     scale="16"
     show-location
+    markers="{{markers}}"
     style="width: 100%; height: 100vh;"
   />
   
-  <!-- 侧边栏 -->
   <view class="sidebar">
-    <button class="sidebar-button" bindtap="chooseItinerary">行程选择</button>
+    <button class="sidebar-button" bindtap="navigateToItinerary">行程选择</button>
     <button class="sidebar-button" bindtap="startVRGuide">VR导览</button>
+    <button class="sidebar-button" bindtap="checkInLocation">景点打卡</button>
   </view>
 
-  <!-- 返回首页按钮 -->
+  <!-- 返回首页按钮 - 保持原有样式 -->
   <button class="back-button" bindtap="goBackHome">返回首页</button>
 </view>
