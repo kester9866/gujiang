@@ -50,3 +50,9 @@
     background-color: #eee;
     margin: 0 30rpx;
   }
+  .back-button {
+    margin-top: 50rpx;
+    background-color: #8cbef3;
+    color: rgb(29, 48, 110);
+    border-radius: 5rpx;
+  }

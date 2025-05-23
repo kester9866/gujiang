@@ -31,4 +31,5 @@
     </view>
     <view class="divider"></view>
   </view>
+  <button class="back-button" bindtap="navigateBack">返回地图</button>
 </view>

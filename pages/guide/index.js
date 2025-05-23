@@ -42,5 +42,9 @@ Page({
       wx.navigateTo({
         url: '/pages/feedback/index'
       });
-    }
+    },
+    // 返回首页
+    navigateBack() {
+        wx.navigateBack();
+      }
   });
