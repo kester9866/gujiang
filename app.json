@@ -9,7 +9,8 @@
     "pages/order/order",
     "pages/goods/goods",
     "pages/events/index",
-    "pages/guide/index"
+    "pages/guide/index",
+    "pages/dou/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
