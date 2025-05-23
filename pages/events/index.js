@@ -5,7 +5,6 @@ Page({
       location: "古豆文化村", // 活动地点
       tags: ["亲子", "豆腐制作", "古法体验"], // 标签列表
       description: "体验传统手工豆腐制作的过程，带您了解古老的豆腐文化。", // 活动描述
-      participants: 10, // 已报名人数
       hasJoined: false // 是否已报名
     }
   },
