@@ -8,21 +8,26 @@
       <view class="card" bindtap="goToGoods">
         <text class="icon">🛍️</text><text>特产商城</text>
       </view>
+
       <navigator url="/pages/events/index" class="card">
         <text class="icon">🎉</text><text>活动预约</text>
       </navigator>
+
       <navigator url="/pages/homestay/index" class="card">
         <text class="icon">🏡</text><text>民宿预订</text>
       </navigator>
+
       <navigator url="/pages/gifts/index" class="card">
         <text class="icon">🎁</text><text>伴手礼定制</text>
       </navigator>
+
       <navigator url="/pages/scene/index" class="card">
         <text class="icon">🌄</text><text>景点导览</text>
       </navigator>
-      <navigator url="/pages/guide/index" class="card">
-        <text class="icon">👤</text><text>个人中心</text>
-      </navigator>
+
+<navigator url="/pages/guide/index" class="card">
+  <text class="icon">👤</text><text>个人中心</text>
+</navigator>
     </view>
 
     <view class="section">

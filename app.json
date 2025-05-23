@@ -8,7 +8,8 @@
     "pages/cart/cart",
     "pages/order/order",
     "pages/goods/goods",
-    "pages/events/index"
+    "pages/events/index",
+    "pages/guide/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",

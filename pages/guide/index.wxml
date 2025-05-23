@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="header">
+    <image class="avatar" src="/image/avatar.png" mode="aspectFill" />
+    <text class="username">欢迎您，{{userInfo.nickName || '游客'}}</text>
+  </view>
+
+  <view class="function-list">
+    <!-- 地址信息 -->
+    <view class="function-item" bindtap="navigateToUserInfo">
+      <view class="item-left">
+        <text>地址信息</text>
+      </view>
+      
+    </view>
+    <view class="divider"></view>
+
+    <!-- 商城订单 -->
+    <view class="function-item" bindtap="navigateToOrders">
+      <view class="item-left">
+        <text>商城订单</text>
+      </view>
+      
+    </view>
+    <view class="divider"></view>
+
+    <!-- 功能反馈 -->
+    <view class="function-item" bindtap="navigateToFeedback">
+      <view class="item-left">
+        <text>功能反馈</text>
+      </view>
+    </view>
+    <view class="divider"></view>
+  </view>
+</view>
